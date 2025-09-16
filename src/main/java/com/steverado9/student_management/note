@@ -1,0 +1,123 @@
+Todo
+1.What is Spring MVC
+2.Learning Spring MVC important concepts
+3.How MVC works
+4.Spring Boot auto configuration for spring MVC
+5.Build a complete web application(Student Management application)
+using Spring MVC, Spring Boot, Spring Data JPA and MySQL database.
+
+    What is Spring MVC?
+Spring framework has different modules and Spring MVC is one of them.
+Spring MVC is used to develop web applications and restful web services.
+Spring MVC design pattern is based on MVC design pattern
+which is is Model View Controller.
+Spring MVC contains Model, View and Controller
+Spring MVC supports seperation of components
+1.When we use spring mvc to develop web services,
+The Controller in spring MVC returns a view which is either JSP or Thymeleaf
+2.But when we use spring mvc to develop restful web application,
+The Controller in spring MVC returns Json or XML.
+    Pre-requisites
+1.Core java
+2.Spring core: Spring MVC leverages on Spring core fundamentals eg
+Spring core Fundamentals
+-Dependency injection
+-setter based dependency injection
+-constructor based dependency injection
+-spring IOC containers-Application Context
+-Spring Beans
+-Different ways to configure Spring beans
+-Java based configuration
+-XML based configuration
+-Annotation based configuration
+3.Thymeleaf: we are going to be using Thymeleaf and not JSP
+because Thymeleaf is one of the most popular template engine used in spring MVC
+4.Dispatcher Servlet: spring MVC is designed based on the dispatcher servlet
+5.Filters: learn how filters work.
+
+    Understanding Spring MVC architecture
+    (How HTTP Request is processed?)
+Spring MVC Terms
+-The DispatcherServlet: acts as a front controller like it
+provides a single entry point for a client request to spring MVC
+web application and forwards request to spring MVC controllers
+for processing.
+-The DispatcherServlet is an actual Servlet(it inherits from
+the HttpServlet base class).
+-handler method- A handler method is a method in a java class
+that handles incoming HTTP requests.
+-Controller class- The java class that contains these handler method
+is called a controller class
+
+    Components in Spring MVC Architecture
+-DispatcherServlet(Front controller): responsible for processing requests and responses.
+-Handler Mapping: responsible for identifying which controller will process the request.
+-Controller: responsible to process the request
+-ViewResolver
+-View Engine: bind model view together
+
+    Understanding Spring MVC architecture
+DispatcherServlet: This is at the center of our Spring MVC architecture
+1.Our request from the web browser first comes to the DispatcherServlet
+2.DispatcherServlet ask the Handler mapping which controller is responsible for handling our request
+3.Handler mapping will identify the corresponding controller and send the details to the DispatcherServlet
+4.Now that the DispatcherServlet knows which controller is handling our request,
+It will send the request to the controller
+5.The controller is responsible to process the incoming request and it will create
+a Model and View which is sent back to the DispatcherServlet
+6.The DispatcherServlet gives a view name to the view resolver to get actual view location
+7.ViewResolver: This is used to identify actual view location, and it will send
+a view and an extension back to the DispatcherServlet
+8.DispatcherServlet gives the model and view to the viewEngine
+9.viewEngine will merge the view template and the model data,
+this will produce an html and send it to the DispatcherServlet.
+10.DispatcherServlet sends the generated html to the browser.
+
+    Spring Boot Auto Configuration for Spring MVC
+-Spring Boot automatically configures a spring application based on dependencies
+present or not present in the classpath as jar, beans, properties etc.
+-A typical MVC database driven Spring MVC application requires a lot of configuration
+such as Dipatcher servlet, a view resolver, jackson, data source, transaction
+manager, among many others.
+-Spring Boot auto-configures a Dispatcher servlet if Spring MVC jar is on the
+classPath.
+-Auto-configures the jackson if jackson jar is on the classpath
+-Auto-configures a Data source if Hibernate jar is on the classpath
+-Spring Boot provides the "spring-boot-starter-web" library for developing web
+applications using Spring MVC.
+-The spring Boot autoconfiguration registers and configures the DispatcherServlet
+automatically. Therefore, we don't need to register the DispatcherServlet manually.
+-When spring boot find some dependecies, it automatically configures them.
+
+    Tools and technologies used For the web application
+1.java 16
+2.Spring Boot
+3.Spring MVC
+4.Spring Data JPA (Hibernate)
+5.MySQL
+6.Thymeleaf
+7.Eclipse STS
+
+    Spring Boot MVC Project Structure
+Browser -> Controller Layer -> Service Layer -> Repository or DAO Layer -> MySQL database
+                 |         \
+                view        Model
+             (Thymeleaf)
+
+1.Controller Layer: holds all the spring image controllers
+2.Service Layer: holds all the service classes (Business logic).
+3.Repository or DAO Layer: hold database related logic and it is reposible for talking to the mySQL database
+  for mvc architecture,
+-controller: processes the request and returns model and view to the browser to render the page.
+
+     Build a complete web application(Student Management application)
+application.properties file in the resources package,
+that is where we configure our database
+-download mySql installer
+-connect to the database using mysql workbench
+-in my sql workbench, type this
+-create database sms
+-highlight it and click execute
+
+
+

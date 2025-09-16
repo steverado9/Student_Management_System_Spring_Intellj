@@ -1,0 +1,7 @@
+How to create a Spring project using intellij
+1)Go to https://start.spring.io/
+2)choose maven(cos it is easier to use and select your dependecies
+3)click on generate to download a zip file
+4)find the path to your intelli j in the c: folder
+5)unzip the generated file
+6)click "New" "project from existing sources"
