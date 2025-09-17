@@ -1,0 +1,9 @@
+package com.steverado9.student_management.service;
+
+import com.steverado9.student_management.entity.Student;
+
+import java.util.List;
+
+public interface StudentService {
+    List<Student> getAllStudents();
+}

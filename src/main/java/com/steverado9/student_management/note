@@ -12,14 +12,14 @@ Spring MVC is used to develop web applications and restful web services.
 Spring MVC design pattern is based on MVC design pattern
 which is is Model View Controller.
 Spring MVC contains Model, View and Controller
-Spring MVC supports seperation of components
+Spring MVC supports separation of components
 1.When we use spring mvc to develop web services,
 The Controller in spring MVC returns a view which is either JSP or Thymeleaf
 2.But when we use spring mvc to develop restful web application,
 The Controller in spring MVC returns Json or XML.
     Pre-requisites
 1.Core java
-2.Spring core: Spring MVC leverages on Spring core fundamentals eg
+2.Spring core: Spring MVC leverages on Spring core fundamentals
 Spring core Fundamentals
 -Dependency injection
 -setter based dependency injection
@@ -77,7 +77,7 @@ this will produce an html and send it to the DispatcherServlet.
 -Spring Boot automatically configures a spring application based on dependencies
 present or not present in the classpath as jar, beans, properties etc.
 -A typical MVC database driven Spring MVC application requires a lot of configuration
-such as Dipatcher servlet, a view resolver, jackson, data source, transaction
+such as Dispatcher servlet, a view resolver, jackson, data source, transaction
 manager, among many others.
 -Spring Boot auto-configures a Dispatcher servlet if Spring MVC jar is on the
 classPath.
@@ -87,7 +87,7 @@ classPath.
 applications using Spring MVC.
 -The spring Boot autoconfiguration registers and configures the DispatcherServlet
 automatically. Therefore, we don't need to register the DispatcherServlet manually.
--When spring boot find some dependecies, it automatically configures them.
+-When spring boot find some dependencies, it automatically configures them.
 
     Tools and technologies used For the web application
 1.java 16
@@ -118,6 +118,27 @@ that is where we configure our database
 -in my sql workbench, type this
 -create database sms
 -highlight it and click execute
+-pom.xml : This is like the package.json: it holds are the dependencies.
+
+    application.properties file
+Here we configure mySQL
+-when ever you use a database, add the hibernate dialect
+-Hibernate auto ddl : use to generate our database automatically
+
+Whenever you create a parameter as a constructor, you should create a default constructor.
+cos hibernate needs the default constructor
+
+@ is used for annotation in java
+@entity is used to make a java class a jp entity
+@Table is used to map an entity to a table
+@Id, @GeneratedValue(strategy = GenerationType.IDENTITY): generate primary key for the table
+jp annotation: automatically asigns columns to field if you omit it using the field name
+impl package is used to do dependency injection
+
+annotate the studentController class with @Controller
+we added annotation to this class cos we want to make it a spring mvc to handle request
+
+-whenever you create a service class, annotate it with @Service
 
 
 
