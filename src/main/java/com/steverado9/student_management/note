@@ -140,5 +140,10 @@ we added annotation to this class cos we want to make it a spring mvc to handle 
 
 -whenever you create a service class, annotate it with @Service
 
+keep all the thymeleaf templates inside the template folder
+
+-type bootstrap css cdn
+-copy the css link and paste it under title in students.html
+
 
 
