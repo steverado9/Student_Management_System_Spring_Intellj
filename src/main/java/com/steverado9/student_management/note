@@ -145,5 +145,8 @@ keep all the thymeleaf templates inside the template folder
 -type bootstrap css cdn
 -copy the css link and paste it under title in students.html
 
+*{}
+syntax to bind data to the model attribute
+
 
 

@@ -9,12 +9,30 @@
           crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Student Management System</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a th:href="@{/students}">Student Management</a></li>
+        </ul>
+    </div>
+</nav>
+<br>
+<br>
+
     <div class = "container">
         <div class = "row">
             <h1> List Students </h1>
         </div>
 
-        <div class=""></div>
+        <div class="row">
+            <div class="col-lg-3">
+                <a th:href = "@{/students/new}" class="btn btn-primary btn-sm mb-3">Add Student</a>
+            </div>
+        </div>
+
         <table class="table table-striped">
             <thead class="table-dark">
                 <tr>
@@ -31,6 +49,10 @@
                         <td th:text = "${student.firstName}"></td>
                         <td th:text = "${student.lastName}"></td>
                         <td th:text = "${student.email}"></td>
+                        <td>
+                            <a th:href = "@{/students/edit/{id}{id=${student.id}}}"
+                            class="btn btn-primary">Update </a>
+                        </td>
                     </tr>
             </tbody>
         </table>
