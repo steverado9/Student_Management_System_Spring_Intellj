@@ -25,7 +25,28 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student saveStudent(Student student) {
+         Student result = studentRepository.findByEmail(student.getEmail());
+        if (result != null) {
+            System.out.println("student already exist");
+            return null;
+        }
         return studentRepository.save(student);
     }
+
+    @Override
+    public Student getStudentById(Long id) {
+        return studentRepository.findById(id).get();
+    }
+
+    @Override
+    public Student updateStudent(Student student) {
+        return studentRepository.save(student);
+    }
+
+    @Override
+    public void deleteStudentById(Long id) {
+        studentRepository.deleteById(id);
+    }
+
 
 }

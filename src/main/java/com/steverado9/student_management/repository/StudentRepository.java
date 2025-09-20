@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 //the type of jprepository is student and type of id
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
+    Student findByEmail(String email);
 }

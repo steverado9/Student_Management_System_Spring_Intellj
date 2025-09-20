@@ -145,8 +145,13 @@ keep all the thymeleaf templates inside the template folder
 -type bootstrap css cdn
 -copy the css link and paste it under title in students.html
 
-*{}
-syntax to bind data to the model attribute
+"*{}" syntax to bind data to the model attribute
+
+@PathVariable: used to bind id to a variable
+
+//add fall back page for pages that does not exist or errors
+//catch / and redirect to /students
+fix live reload
 
 
 

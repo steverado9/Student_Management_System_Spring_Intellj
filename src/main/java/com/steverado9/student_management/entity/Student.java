@@ -16,11 +16,16 @@ public class Student {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     //default constructor
     public Student() {}
+
+    public Student(String firstName) {
+        this.firstName = firstName;
+    }
+
 
     //parameter constructors
     public Student(String firstName, String lastName, String email) {
@@ -31,7 +36,7 @@ public class Student {
     }
 
     //getters and setters methods
-    public Long getI() {
+    public Long getId() {
         return id;
     }
 
