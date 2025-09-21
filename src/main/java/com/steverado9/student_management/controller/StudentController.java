@@ -2,6 +2,7 @@ package com.steverado9.student_management.controller;
 
 import com.steverado9.student_management.entity.Student;
 import com.steverado9.student_management.service.StudentService;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,9 +38,14 @@ public class StudentController {
     }
 
     @PostMapping("/students")
-    public String saveStudent(@ModelAttribute("xyz") Student student) {
-        studentService.saveStudent(student);
-        return "redirect:/students";
+    public String saveStudent(@ModelAttribute("xyz") Student student, Model model) {
+        try {
+            studentService.saveStudent(student);
+            return "redirect:/students";
+        } catch (DataIntegrityViolationException e) {
+            model.addAttribute("errorMessage", "Email already exists!");
+            return "create_student";
+        }
     }
 
     @GetMapping("/students/edit/{id}")

@@ -132,7 +132,7 @@ cos hibernate needs the default constructor
 @entity is used to make a java class a jp entity
 @Table is used to map an entity to a table
 @Id, @GeneratedValue(strategy = GenerationType.IDENTITY): generate primary key for the table
-jp annotation: automatically asigns columns to field if you omit it using the field name
+jp annotation: automatically asigns columns to field if you omit it, it uses the field name
 impl package is used to do dependency injection
 
 annotate the studentController class with @Controller

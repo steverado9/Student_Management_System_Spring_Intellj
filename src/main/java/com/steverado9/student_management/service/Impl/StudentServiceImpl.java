@@ -25,11 +25,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student saveStudent(Student student) {
-         Student result = studentRepository.findByEmail(student.getEmail());
-        if (result != null) {
-            System.out.println("student already exist");
-            return null;
-        }
         return studentRepository.save(student);
     }
 
@@ -47,6 +42,4 @@ public class StudentServiceImpl implements StudentService {
     public void deleteStudentById(Long id) {
         studentRepository.deleteById(id);
     }
-
-
 }

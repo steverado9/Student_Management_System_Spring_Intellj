@@ -22,11 +22,6 @@ public class Student {
     //default constructor
     public Student() {}
 
-    public Student(String firstName) {
-        this.firstName = firstName;
-    }
-
-
     //parameter constructors
     public Student(String firstName, String lastName, String email) {
         super();
