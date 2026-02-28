@@ -22,7 +22,7 @@ public class Student {
     //default constructor
     public Student() {}
 
-    //parameter constructors
+    //parameter constructor
     public Student(String firstName, String lastName, String email) {
         super();
         this.firstName = firstName;
@@ -62,5 +62,4 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }
