@@ -54,11 +54,45 @@
                             class="btn btn-primary">Update </a>
 
                             <a th:href = "@{/students/{id}(id=${student.id})}"
-                               class="btn btn-danger">Delete </a>
+                               class="btn btn-danger delete-link">Delete </a>
                         </td>
                     </tr>
             </tbody>
         </table>
     </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.querySelectorAll(".delete-link").forEach(link => {
+            link.addEventListener("click", function(event) {
+
+                event.preventDefault(); //stop link from navigating immediately
+
+                const url = this.getAttribute("href");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This student will be deleted permanently!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Yes, delete!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = url;
+                    }
+                });
+
+            });
+        });
+
+    });
+</script>
+
 </body>
 </html>
